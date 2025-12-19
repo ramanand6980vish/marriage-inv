@@ -52,7 +52,65 @@ body{
   text-align:center;
 }
 
-.card-event{
+.events{
+  background: linear-gradient(180deg,#fff7f0,#ffe6f0);
+  padding:90px 0;
+}
+
+.section-title{
+  font-size:2.6rem;
+  color:#b33a6c;
+  margin-bottom:10px;
+}
+
+.section-sub{
+  color:#7a2a4a;
+  font-style:italic;
+}
+
+.event-card{
+  background:white;
+  padding:40px 25px;
+  border-radius:25px;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+  transition:.4s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.event-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:5px;
+  background:linear-gradient(to right,#ff758c,#ff7eb3);
+}
+
+.event-card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 25px 50px rgba(0,0,0,.18);
+}
+
+.event-icon{
+  font-size:2.5rem;
+  margin-bottom:15px;
+}
+
+.event-card h4{
+  color:#b33a6c;
+  font-size:1.5rem;
+  margin-bottom:10px;
+}
+
+.event-card span{
+  color:#555;
+  font-size:1rem;
+  letter-spacing:.5px;
+}
+
+/* .card-event{
   background:white;
   padding:25px;
   border-radius:15px;
@@ -62,9 +120,9 @@ body{
 
 .card-event:hover{
   transform:scale(1.05);
-}
+} */
 
-.countdown{
+/* .countdown{
   background:#ffe6d6;
 }
 
@@ -72,10 +130,61 @@ body{
   font-size:1.5rem;
   margin:0 10px;
   font-weight:bold;
+} */
+
+.countdown{
+  background: linear-gradient(135deg,#ffe0ec,#fff3e0);
+  padding:80px 20px;
 }
 
+.countdown h2{
+  font-size:2.5rem;
+  color:#b33a6c;
+  margin-bottom:10px;
+}
+
+.countdown-sub{
+  font-style:italic;
+  color:#7a2a4a;
+  margin-bottom:40px;
+}
+
+.timer-box{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.time{
+  background:white;
+  padding:25px 30px;
+  border-radius:20px;
+  min-width:120px;
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
+  transition:.3s;
+}
+
+.time:hover{
+  transform:translateY(-8px);
+}
+
+.time span{
+  font-size:2.5rem;
+  font-weight:bold;
+  color:#ff4f81;
+  display:block;
+}
+
+.time small{
+  font-size:1rem;
+  color:#555;
+  letter-spacing:1px;
+}
+
+
 video{
-  width:80%;
+  width:100%;
   border-radius:15px;
   box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
@@ -113,10 +222,57 @@ video{
   box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
+.wedding-footer{
+  background: linear-gradient(135deg,#2c2c2c,#3b1f2f);
+  color:#fff;
+  text-align:center;
+  padding:50px 20px;
+}
+
+.footer-content h3{
+  font-size:2rem;
+  letter-spacing:2px;
+  margin-bottom:10px;
+  color:#ffb6c1;
+}
+
+.footer-content p{
+  font-size:1rem;
+  opacity:.9;
+  margin-bottom:15px;
+}
+
+.footer-love{
+  font-style:italic;
+  color:#ffd1dc;
+  font-size:1.1rem;
+}
+
+.footer-line{
+  width:80px;
+  height:3px;
+  background:linear-gradient(to right,#ff758c,#ff7eb3);
+  margin:20px auto;
+  border-radius:2px;
+}
+
+footer small{
+  opacity:.7;
+}
+
+
 .rsvp input,.rsvp select{
   margin:10px 0;
   padding:12px;
 }
+.form-box{
+  background:white;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+  margin-top:40px;
+}
+
 
 button{
   padding:12px 30px;
@@ -169,9 +325,7 @@ footer{
         <li class="nav-item">
           <a class="nav-link fw-medium" href="#gallery" style="color:#b33a6c;">Gallery</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link fw-medium" href="#qr" style="color:#b33a6c;">QR Code</a>
-        </li>
+    
         <li class="nav-item">
           <a class="nav-link fw-medium" href="#rsvp" style="color:#b33a6c;">RSVP</a>
         </li>
@@ -183,53 +337,84 @@ footer{
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <h1>Prem Sagar </h1>
-  <img width="90px" src="Assets/hanshaken.jpg">
-  <h1> Rani Kumari</h1>
+  <h1>Prem </h1>
+  <img width="170px" src="/hanshakene.png">
+  <h1> Rani</h1>
   <p>We request the pleasure of your presence</p>
 </section>
 
 <!-- EVENTS -->
-<section class="events container" id="events">
-  <h2>Wedding Events</h2>
-  <div class="row mt-4">
-    <div class="col-md-4">
-      <div class="card-event">
-        <h4>Tilak</h4>
-        <p>04 February 2026</p>
+<!-- EVENTS -->
+<section class="events" id="events">
+  <div class="container text-center">
+    <h2 class="section-title">Wedding Celebrations</h2>
+    <p class="section-sub">Join us as we celebrate love and traditions</p>
+
+    <div class="row mt-5">
+      <div class="col-md-4 mb-4">
+        <div class="event-card">
+          <div class="event-icon">🌸</div>
+          <img src="/Assets/tilak1.jpeg" alt="tilak img">
+          <h4>Tilak Ceremony</h4>
+          <span>04 February 2026</span>
+        </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card-event">
-        <h4>Mandap</h4>
-        <p>05 February 2026</p>
+
+      <div class="col-md-4 mb-4">
+        <div class="event-card">
+          <div class="event-icon">🔥</div>
+          <img src="/Assets/mandap1.jpg" alt="mandap img">
+          <h4>Mandap Ritual</h4>
+          <span>05 February 2026</span>
+        </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card-event">
-        <h4>Baraat</h4>
-        <p>06 February 2026</p>
+
+      <div class="col-md-4 mb-4">
+        <div class="event-card">
+          <div class="event-icon">🐎</div>
+          <img src="/Assets/barat1.jpg" alt="barat img">
+          <h4>Grand Baraat</h4>
+          <span>06 February 2026</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- COUNTDOWN -->
 <section class="countdown" id="countdown">
-  <h2>Counting Days Until Baraat</h2>
-  <div id="timer">
-    <span id="days"></span>Days
-    <span id="hours"></span>Hours
-    <span id="minutes"></span>Min
-    <span id="seconds"></span>Sec
+  <h2>Days Left Until the Grand Baraat</h2>
+  <p class="countdown-sub">Our forever begins in</p>
+
+  <div class="timer-box">
+    <div class="time">
+      <span id="days"></span>
+      <small>Days</small>
+    </div>
+    <div class="time">
+      <span id="hours"></span>
+      <small>Hours</small>
+    </div>
+    <div class="time">
+      <span id="minutes"></span>
+      <small>Minutes</small>
+    </div>
+    <div class="time">
+      <span id="seconds"></span>
+      <small>Seconds</small>
+    </div>
   </div>
 </section>
 
+
 <!-- VIDEO -->
 <section class="video" id="video">
-  <h2>Our Story</h2>
+  <h2>Where It All Began</h2>
   <!-- Replace src with your video -->
-  <video controls>
+  <video controls autoplay muted loop controlsList="nodownload nofullscreen noremoteplayback"
+  disablePictureInPicture
+       oncontextmenu="return false;">
     <source src="/Assets/video.mp4" type="video/mp4">
   </video>
 </section>
@@ -242,37 +427,55 @@ footer{
     <img src="/Assets/pic2.1.JPG">
     <img src="/Assets/pic2.JPG">
     <img src="/Assets/pic3.1.JPG">
-    <img src="/pic3.JPG">
-    <img src="/pic4.JPG">
+    <img src="/Assets/pic3.JPG">
+    <img src="/Assets/pic4.JPG">
     <img src="/Assets/pic5.JPG">
-    <img src="/pic6.JPG">
-    <img src="/pic7.JPG">
+    <img src="/Assets/pic6.JPG">
+    <img src="/Assets/pic7.JPG">
+  </div>
+</section>
+<!-- ORGANIZER -->
+<section class="organizer-section" id="organizer">
+  <div class="container text-center">
+    <h2 class="section-title">Organizer</h2>
+
+    <div class="organizer-card">
+      <div class="organizer-icon">🪔</div>
+      <h4>Nagendra Vishwakarma</h4>
+      <p>Event Coordinator & Family Representative</p>
+    </div>
   </div>
 </section>
 
-<!-- QR -->
-<section class="qr" id="qr">
-  <h2>Scan for Invitation</h2>
-  <p>Scan QR to open wedding website</p>
-  <div id="qrcode"></div>
-</section>
 
 <!-- RSVP -->
 <section class="rsvp container" id="rsvp">
-  <h2>RSVP</h2>
-  <input type="text" placeholder="Your Name">
-  <input type="number" placeholder="Number of Guests">
-  <select>
-    <option>Will Attend</option>
-    <option>Will Not Attend</option>
-  </select>
-  <br>
-  <button onclick="alert('RSVP Submitted ❤️')"><strong>Submit</strong></button>
+
+  <div class="form-box">
+    <iframe 
+      src="https://forms.gle/Q7zby4Jeqvixy9MW8"
+      width="100%"
+      height="850"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0">
+      Loading…
+    </iframe>
+  </div>
 </section>
 
-<footer>
-  <p>With Love ❤️ Prem & Rani</p>
+
+
+<footer class="wedding-footer">
+  <div class="footer-content">
+    <h3>Prem & Rani</h3>
+    <p>Together with their families, invite you to celebrate their wedding</p>
+    <span class="footer-love">With Love ❤️</span>
+    <div class="footer-line"></div>
+    <small>© 2026 • Nagendra Vishwakarma</small>
+  </div>
 </footer>
+
 
 <script>
 // COUNTDOWN
@@ -296,4 +499,3 @@ new QRCode(document.getElementById("qrcode"), {
 
 </body>
 </html>
-
